@@ -33,13 +33,16 @@ jobs:
       - name: Convert PDF to PNG
         run: pdftoppm -png cv.pdf cv
 
+      - name: List files after PNG conversion
+        run: ls -R
+
       - name: Create assets directory
         run: mkdir -p assets
 
       - name: Move assets to directory
         run: |
           mv cv.pdf assets/
-          mv cv-01.png assets/cv.png
+          mv cv*.png assets/
 
       - name: Configure Git and Push Assets
         run: |
@@ -48,9 +51,6 @@ jobs:
           git add assets
           git commit -m "Add generated CV assets"
           git push
-
-      - name: List files after LaTeX compilation
-        run: ls -R
 
   build-pages:
     runs-on: ubuntu-latest
@@ -73,7 +73,7 @@ jobs:
           <html lang="en">
           <head>
             <meta charset="UTF-8">
-            <title>Oh My CV</title>
+            <title>My CV</title>
             <style>
               body { margin: 0; padding: 0; }
               embed { display: block; width: 100%; height: 100vh; }
@@ -88,7 +88,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'public'
+          path: "public"
 
   deploy:
     environment:
