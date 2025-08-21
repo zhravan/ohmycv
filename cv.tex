@@ -1,0 +1,344 @@
+%-------------------------
+% OhMyCV in LateX
+% Author : gutghuy
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.4in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\justifying
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\normalsize
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\footnotesize{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\footnotesize#3} & \textit{\footnotesize #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\footnotesize#3} & \textit{\footnotesize #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\footnotesize#1} & \textit{\footnotesize #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Project entry: title, date, description
+\newcommand{\projectEntry}[3]{
+  \vspace{2pt}
+  \noindent
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr}
+    \textbf{#1} & \textit{#2} \\
+  \end{tabular*}\vspace{-2pt}
+  \noindent
+  \parbox[t]{0.97\textwidth}{\footnotesize #3}
+  \vspace{8pt}
+}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{center}
+  \textbf{\href{https://example.com/john-doe}{\large John Doe}} \\[4pt]
+  Email: \href{mailto:john.doe@example.com}{john.doe@example.com} $|$ 
+  Mobile: \href{tel:+11234567890}{+1-123-456-7890} $|$ 
+  Location: California, USA \\[6pt]
+  {\footnotesize
+    \href{https://www.linkedin.com/in/john-doe/}{LinkedIn} $|$
+    \href{https://github.com/john-doe}{GitHub} $|$
+    \href{https://gitlab.com/john-doe}{GitLab} $|$
+    \href{https://example.com/john-doe-portfolio}{Portfolio} $|$
+    \href{https://stackoverflow.com/users/dummy/john-doe}{StackOverflow} $|$
+    \href{https://medium.com/@john-doe}{Medium} $|$
+    \href{https://dev.to/john-doe}{Dev.to} $|$
+    \href{https://www.hackerrank.com/john-doe}{HackerRank} $|$
+    \href{https://codepen.io/john-doe}{CodePen} $|$
+    \href{https://twitter.com/john_doe}{Twitter} $|$
+    \href{https://discord.com/users/john.doe}{Discord}
+  }
+\end{center}
+
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Berkeley}{Berkeley, CA}
+      {Master of Science in Computer Science}{20XX -- 20XX}
+    \resumeSubheading
+      {University of California, Los Angeles}{Los Angeles, CA}
+      {Bachelor of Science in Computer Science}{20XX -- 20XX}
+    \resumeSubheading
+      {High School Name}{City, State}
+      {High School Diploma}{20XX -- 20XX}
+    \resumeSubheading
+      {Middle School Name}{City, State}
+      {Middle School Diploma}{20XX -- 20XX}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    %=== FREELANCE ===
+    \resumeSubheading
+      {Freelance @ Tech Solutions Inc.}{Remote}
+      {Lead Software Engineer}{Jan 20XX -- Dec 20XX}
+      \resumeItemListStart
+        \item \small Designed and developed a routing optimization tool from scratch, delivering custom solutions to address client-specific requirements.
+        \item \small Architected microservices and transitioned the application infrastructure from bare-metal instances to a Kubernetes-based setup.
+        \item \small Implemented asynchronous processes using Kafka, including Dead Letter Queue (DLQ) setups and alert systems for enhanced reliability.
+        \item \small Migrated a Parse Server application to an Express.js-based architecture.
+        \item \small Developed routing algorithms leveraging the FastAPI framework and translated white papers into production-ready systems, including genetic algorithm implementations.
+        \item \small Revamped database designs and optimized API response times, achieving significant improvements in overall Turnaround Time.
+        \item \small Integrated Prometheus metrics for consumer lag, processing latency, and error rates; built Grafana dashboards and alert rules to detect slowdowns or consumer omission in real time.
+        \item \small Developed a multi-threaded execution framework to evaluate diverse neighborhood moves in parallel, resulting in a 2\\x speedup on multi-core machines and enabling real-time re-optimization.
+        \item \small Built a benchmarking suite to compare algorithm variants on datasets ranging from 50 to 1,000 stops; scaled the solver to handle up to 5,000 nodes via incremental clustering and route seeding strategies.
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Freelance @ Global Innovations}{Remote}
+      {Software Development Engineer}{Jan 20XX -- May 20XX}
+      \resumeItemListStart
+        \item \small Migrated legacy jQuery UI modules to modern React-based applications, enhancing performance and maintainability.
+        \item \small Revamped the DB design and enhanced API execution time by 82\% and optimized communication pathways.
+        \item \small Redesigned application architecture, transitioning from monolithic structures to microservices, improving scalability and reliability.
+        \item \small Collaborated with multiple clients, independently managing project timelines and deliverables.
+      \resumeItemListEnd
+
+    %=== InnovateTech ===
+    \resumeSubheading
+      {InnovateTech Solutions}{San Francisco, CA}
+      {Software Development Engineer II}{Jan 20XX -- Oct 20XX}
+      \resumeItemListStart
+        \item \small Improvised the cache mechanism system for a specific step in the Route Optimization algorithm.
+        \item \small Architected and designed complex backend systems to handle business requirements ensuring scalability.
+        \item \small Benchmarked different solution providers with existing system and identified bottlenecks. 
+        \item \small Lead the analysis of Engines and drove the migration of 30+ clients, consisting of a total of 1900 branches in one quarter, to the new routing engine, which reduced average route generation time by 12.8%.
+        \item \small Mentored backend engineers to deliver high-quality solutions on time and within budget.
+        \item \small Achieved a 30\% reduction in the number of calls made to the Google Maps Distance Matrix in various workflows.
+        \item \small Reduced overall AWS infra cost by 18\% in one quarter by decreasing the size of machines on AWS for low runtime clients.
+        \item \small Optimized queue waiting time, reducing wait times for low-runtime clients by 60%.
+      \resumeItemListEnd
+
+      \resumeSubSubheading{Software Development Engineer I}{Oct 20XX -- Dec 20XX}
+      \resumeItemListStart
+        \item \small Analyzed, designed, and developed algorithms and data structures for solving route optimization problems.
+        \item \small Built custom and tailor-made solutions for customers in the last-mile domain.
+        \item \small Optimized system performance, identified \& resolved bottlenecks, and ensured scalability \& availability.
+        \item \small Conducted cost analysis on resource usage and initiated cost-cutting measures.
+        \item \small Worked extensively with SpringBoot, Java, Python, and JavaScript across product modules.
+      \resumeItemListEnd
+
+    %=== DevConnect ===
+    \resumeSubheading
+      {DevConnect Systems}{New York, NY}
+      {Senior Software Developer}{Apr 20XX -- Oct 20XX}
+      \resumeItemListStart
+        \item \small Developed backend services with Java/J2EE, Spring Boot, and Hibernate.
+        \item \small Enhanced existing Java applications with modern practices and improved standards.
+        \item \small Designed and tested new services using Spring Boot framework.
+        \item \small Performed unit testing with JUnit and contributed to best practice adoption.
+        \item \small Designed databases and produced technical documentation for applications.
+        \item \small Designed and deployed cron-driven batch processing pipelines handling thousands of records per run, improving operational throughput by 20\%.
+      \resumeItemListEnd
+
+      \resumeSubSubheading{Software Developer}{Feb 20XX -- Mar 20XX}
+      \resumeItemListStart
+        \item \small Designed and wrote unit tests, achieving 100\% coverage for backend applications.
+        \item \small Developed a distributed logging framework for Node.js application, improving observability.
+        \item \small Containerized services with Docker and deployed on AWS EC2.
+        \item \small Integrated Moodle LMS with custom Node.js APIs and React frontend, streamlining workflows for learning management system product.
+        \item \small Authored comprehensive technical documentation and user guides for Moodle deployments, accelerating onboarding and reducing setup time.
+      \resumeItemListEnd
+
+      \resumeSubSubheading{Software Development Intern}{Jul 20XX -- Feb 20XX}
+      \resumeItemListStart
+        \item \small Designed and managed backend applications and databases.
+        \item \small Created UI components with React.js and integrated Firebase Notifications.
+        \item \small Conformed to NFRs such as code quality, coverage, and complexity standards.
+        \item \small Developed event management workflow engine, automating scheduling, reminders, and updates; improved user engagement by 40\%.
+      \resumeItemListEnd
+
+    %=== Data Insights Co. ===
+    \resumeSubheading
+      {Data Insights Co.}{Austin, TX}
+      {Student Intern}{Jul 20XX -- Aug 20XX}
+      \resumeItemListStart
+        \item \small Designed UI templates using Bootstrap and AngularJS.
+        \item \small Integrated a newsletter service and supported Node.js backend development.
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+
+\projectEntry
+  {Project Alpha - Data Visualization Tool}
+  {Feb 2023 -- Present}
+  {Engineered a multi-tab interface supporting raw and collapsible tree views, enabling efficient formatting, visualization, and real-time error handling. Features include a side-by-side diff tool and cross-language code generation.}
+
+\projectEntry
+  {FOSS Navigator}
+  {Mar 2023 -- Present}
+  {Developed FOSS Navigator, a tool providing comprehensive health reports for FOSS projects with detailed metrics and scoring for README files.}
+
+\projectEntry
+  {EventSphere}
+  {Feb 2024 -- Feb 2024}
+  {Created a lightweight, self-hosted RSVP system using Cloudflare Workers. This system allows users to create events, generate unique RSVP links, and securely collect responses via Cloudflare KV.}
+
+\projectEntry
+  {Sales Prediction Model using Machine Learning}
+  {Jun 2023 -- Jun 2023}
+  {Developed a business forecasting model in R, utilizing linear regression with extensive EDA and visualization to analyze global sales, customer behavior, and revenue patterns, delivering actionable insights.}
+
+\projectEntry
+  {AI-Powered Product Mockup Generator}
+  {Feb 2023 -- May 2023}
+  {Designed and implemented a UI-based automation tool for product photography, leveraging open-source generative AI technologies like Stable Diffusion and Mid Journey, with a Python backend and React frontend.}
+
+\projectEntry
+  {Modular UI Components Library}
+  {Mar 2021 -- May 2021}
+  {Developed a library of custom input types, allowing for native HTML input tag customization without requiring JavaScript. This library is available as an NPM package.}
+
+\projectEntry
+  {Dynamic Quote Widget for Profiles}
+  {Nov 2020 -- Present}
+  {Contributed to an open-source project, a GitHub Dynamic Quote Generator, which displays a dynamic quote for every user visiting a GitHub profile by simply adding an image link in the README.md.}
+
+\projectEntry
+  {Smart Waste Management System with IoT}
+  {Nov 2018 -- May 2019}
+  {Developed an IoT-based indoor garbage collection system featuring smart bins that notify a collector robot via an indoor positioning system for automated waste management.}
+
+\projectEntry
+  {Secure Online Banking Platform}
+  {Oct 2018 -- Nov 2018}
+  {Built an internal e-banking web application enabling money transfers and transaction monitoring. The application used Bootstrap for the frontend, PHP for the backend, and MySQL for the database.}
+
+\projectEntry
+  {Restaurant Online Ordering System}
+  {Jul 2018 -- Aug 2018}
+  {Developed an online food ordering portal for a restaurant chain using the MEAN stack with Bootstrap and jQuery, integrating online payment and streamlined order management functionalities.}
+
+\projectEntry
+  {IoT-Based Fleet Tracking and Alert System}
+  {Jul 2018 -- Aug 2018}
+  {Implemented an IoT-based system with Raspberry Pi and a MIT App Inventor application to notify truck drivers via GSM about the location of filled dustbins for efficient garbage collection.}
+
+\projectEntry
+  {Animal Sanctuary Management System}
+  {Sep 2017 -- Nov 2017}
+  {Created a web application for zoo management, focusing on animal feeds, using HTML, CSS, JavaScript for the frontend, PHP for the backend, and MySQL as the database via XAMPP server.}
+
+\projectEntry
+  {Robotics Project: Obstacle Avoidance}
+  {Sep 2017 -- Oct 2017}
+  {Developed an Obstacle Detection and Avoidance Robot using Arduino Uno and Ultrasonic Sensors for a mini-project in Embedded Systems, showcased at the RRCE - CSE Dept Level Project Expo.}
+
+%--------SKILLS------------
+\section{Skills}
+\begin{tabularx}{\textwidth}{@{} l X @{} }
+\textbf{Languages} \hspace{1em} & JavaScript, TypeScript, Java, Python, PHP, R \\
+\textbf{Frameworks} \hspace{1em} & Node.js,Express.js, NestJS, Spring Boot, React.js, Redux, FastAPI, Kafka \\
+\textbf{Databases} \hspace{1em} & PostgreSQL, MySQL, MongoDB, SQLite, Redis \\
+\textbf{DevOps/Tools} \hspace{1em} & Docker, Kubernetes, Jenkins, Git/GitHub, nginx \\
+\textbf{Cloud} \hspace{1em} & AWS, Firebase, Heroku, Netlify, Vercel \\
+\textbf{Testing} \hspace{1em} & Mocha, JUnit5, SuperTest, PyTest \\
+\textbf{OS} \hspace{1em} & Linux, macOS, Windows \\
+\textbf{Others} \hspace{1em} & HTML5, CSS3, Markdown, Raspberry Pi, Arduino \\
+\end{tabularx}
+
+
+%-----------DECLARATION-----------------
+\section{Declaration}
+\vspace{-1pt}
+\noindent
+I sincerely proclaim that all the facts in my resume are accurate, and I am responsible for their accuracy.
+
+\vspace{20pt}
+
+\begin{flushleft}
+  \includegraphics[scale=0.5]{sign.png} \\[4pt] % Uncomment if you have a local image
+  \vspace{10pt}
+  \rule{5cm}{0.4pt} \\[-2pt]
+  \textbf{John Doe}
+\end{flushleft}
+
+
+%-------------------------------------------
+\end{document}
